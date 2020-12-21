@@ -1,9 +1,9 @@
 <?php
 
-namespace DogeDev\SMSVerification\Traits;
+namespace Albertojm8\SMSVerification\Traits;
 
-use DogeDev\SMSVerification\DogeDevSNSClientFacade;
-use DogeDev\SMSVerification\Exceptions\TooManySMSVerificationAttempts;
+use Albertojm8\SMSVerification\Albertojm8SNSClientFacade;
+use Albertojm8\SMSVerification\Exceptions\TooManySMSVerificationAttempts;
 use GuzzleHttp\Client;
 
 /**
@@ -12,7 +12,7 @@ use GuzzleHttp\Client;
  * Sends an SMS message containing a verificaiton code to a given mobile number (using AWS SNS)
  * Contains methods for verifying the user submitted code (authorising action) and monitoring attempts.
  *
- * @package DogeDev\SMSVerification\Traits
+ * @package Albertojm8\SMSVerification\Traits
  */
 trait VerifiesSMSCode
 {
@@ -29,7 +29,7 @@ trait VerifiesSMSCode
         $digits = 4;
         $code = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
 
-        DogeDevSNSClientFacade::publish([
+        Albertojm8SNSClientFacade::publish([
             "SenderId"    => $this->getSMSVerificationSender(),
             "SMSType"     => "Transactional",
             "Message"     => $this->getSMSVerificationMessage($code),

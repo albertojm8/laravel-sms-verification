@@ -1,6 +1,6 @@
 <?php
 
-namespace DogeDev\SMSVerification;
+namespace Albertojm8\SMSVerification;
 
 use Aws\Sns\SnsClient;
 use Illuminate\Support\Facades\Auth;
@@ -42,14 +42,14 @@ class SMSVerificationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('DogeDevSNSClientSingleton', function (){
+        $this->app->singleton('Albertojm8SNSClientSingleton', function (){
 
             return new SnsClient([
                 'version'     => 'latest',
                 'region'      => 'us-west-2',
                 'credentials' => [
-                    'key'    => env('DOGEDEV_AWS_SMS_ID'),
-                    'secret' => env('DOGEDEV_AWS_SMS_SECRET'),
+                    'key'    => env('Albertojm8_AWS_SMS_ID'),
+                    'secret' => env('Albertojm8_AWS_SMS_SECRET'),
                 ],
             ]);
         });

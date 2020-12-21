@@ -1,5 +1,5 @@
 # laravel-sms-verification
-Library for sending out and verifying SMS codes using AWS SNS.
+Library for sending out and verifying SMS codes using AWS SNS
 
 The package has a trait and a custom validation rule that you can use on any model for verifying with an SMS code.
 
@@ -20,13 +20,13 @@ The package has a trait and a custom validation rule that you can use on any mod
 Pull the lib with composer:
 
 ```bash
-composer require doge-dev/laravel-sms-verification
+composer require albertojm8/laravel-sms-verification
 ```
 
 Add the service provider in ```config/app.php```
 
 ```php
-DogeDev\SMSVerification\SMSVerificationServiceProvider::class,
+Albertojm8\SMSVerification\SMSVerificationServiceProvider::class,
 ```
 
 You can add SMS Verification to any model, and it will create:
@@ -44,7 +44,7 @@ Add the ```VerifiesSMSCode``` trait to your User model (or any other model on wh
 
 namespace App;
 
-use DogeDev\SMSVerification\Traits\VerifiesSMSCode;
+use Albertojm8\SMSVerification\Traits\VerifiesSMSCode;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
@@ -97,7 +97,7 @@ You can adjust the number of attempts a User can have at verifying the code by o
 
 namespace App;
 
-use DogeDev\SMSVerification\Traits\VerifiesSMSCode;
+use Albertojm8\SMSVerification\Traits\VerifiesSMSCode;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
