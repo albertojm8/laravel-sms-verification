@@ -48,8 +48,8 @@ class SMSVerificationServiceProvider extends ServiceProvider
                 'version'     => 'latest',
                 'region'      => 'us-west-2',
                 'credentials' => [
-                    'key'    => env('Albertojm8_AWS_SMS_ID'),
-                    'secret' => env('Albertojm8_AWS_SMS_SECRET'),
+                    'key'    => env('AWS_SMS_ID'),
+                    'secret' => env('AWS_SMS_SECRET'),
                 ],
             ]);
         });
