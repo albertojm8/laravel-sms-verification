@@ -26,7 +26,8 @@ trait VerifiesSMSCode
      */
     public function setSMSVerificationNumber($mobile)
     {
-        $code = str_random(6);
+        $digits = 4;
+        $code = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
 
         DogeDevSNSClientFacade::publish([
             "SenderId"    => $this->getSMSVerificationSender(),

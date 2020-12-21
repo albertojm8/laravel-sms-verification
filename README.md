@@ -1,5 +1,5 @@
 # laravel-sms-verification
-Library for sending out and verifying SMS codes using AWS SNS
+Library for sending out and verifying SMS codes using AWS SNS. Based on from Marko Maletic @doge-dev development.
 
 The package has a trait and a custom validation rule that you can use on any model for verifying with an SMS code.
 
@@ -28,16 +28,8 @@ Add the service provider in ```config/app.php```
 ```php
 DogeDev\SMSVerification\SMSVerificationServiceProvider::class,
 ```
-Add your AWS credentials to you .env file:
 
-```
-DOGEDEV_AWS_SMS_ID=your-aws-access-key-id
-DOGEDEV_AWS_SMS_SECRET=your-aws-secret-access-key
-```
-
-NOTE: Please reffer to AWS documentation for best practices regarding AWS credentails and possibly consider creating a dedicated user with limitted privileges only for sending SMS messages
-
-You can add SMS verification to any model by adding the VerifiesSMS trait supplied in this library, and it will create:
+You can add SMS Verification to any model, and it will create:
 
 * a function **setSMSVerificationNumber($mobile)** - sets the mobile number and sends out the SMS message containg the verification code
 * a function **verifySMSCode($code)** -verifies the SMS code 
