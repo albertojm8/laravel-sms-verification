@@ -1,5 +1,5 @@
 # laravel-sms-verification
-Library for sending out and verifying SMS codes using AWS SNS. Based on from Marko Maletic @doge-dev development.
+Library for sending out and verifying SMS codes using AWS SNS.
 
 The package has a trait and a custom validation rule that you can use on any model for verifying with an SMS code.
 

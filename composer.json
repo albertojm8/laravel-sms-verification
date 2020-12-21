@@ -1,5 +1,5 @@
 {
-    "name": "albertojm8/laravel-sms-verification",
+    "name": "doge-dev/laravel-sms-verification",
     "description": "Library for sending out and verifying SMS codes using AWS SNS. Based on from Marko Maletic @doge-dev development.",
     "keywords": ["laravel", "sms", "verification", "aws"],
     "type": "library",
